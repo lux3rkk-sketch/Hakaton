@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeakVentures - Kiçik Qafqaz Turları 🏞️</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Qafqaz Turları Səhifəsinə Xüsusi Stillər */
+        
+        /* Hero Section */
+        .hero-caucasus {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('images/caucasus-hero.jpg') no-repeat center center/cover;
+            height: 60vh;
+            min-height: 400px;
+        }
+
+        /* Tur Kartları Qridi */
+        .tour-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .tour-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            padding: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            border-top: 5px solid var(--secondary-color);
+        }
+
+        .tour-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .tour-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .tour-card .price {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin: 15px 0;
+        }
+        
+        .tour-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        
+        .tour-card ul li {
+            padding: 5px 0;
+            border-bottom: 1px dashed #eee;
+            font-size: 0.9em;
+        }
+        
+        .tour-card ul li:last-child {
+            border-bottom: none;
+        }
+        
+        .map-section iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">PeakVentures ⛰️</h1>
+            <nav id="nav-menu">
+                <a href="index.html">Ana Səhifə</a>
+                <!-- <a href="ekoturizm.html">Ekoloji Turizm</a> -->
+                <a href="alpinist.html">Alpinistlər</a>
+                <a href="chat.html">AI Çat</a>
+                <a href="booking.html">Uçuş Bileti</a>
+                <!-- <a href="support.html">24/7 Dəstək</a> -->
+                <!-- <a href="routes.html">Təhlükəsiz Marşrutlar</a> -->
+            </nav>
+            <div class="burger-menu" id="burger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section hero-caucasus">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h2 class="animate-in">Kiçik Qafqaz Turları</h2>
+                <p class="animate-in delay-1">Şəki, Qəbələ və Göygöl istiqamətində unudulmaz səyahətlər.</p>
+                <a href="#tours" class="btn-secondary animate-in delay-2">Tur Paketləri</a>
+            </div>
+        </section>
+
+        <section class="section" id="about">
+            <div class="container animate-scroll">
+                <h2><i class="fas fa-map-marked-alt"></i> Kiçik Qafqaz Tur Marşrutu</h2>
+                <p class="lead">Kiçik Qafqazın Azərbaycandakı hissəsi zəngin tarixi, sıx meşələri və möhtəşəm gölləri ilə məşhurdur. Əsas turistik mərkəzlər **Göygöl, Şəki və Qəbələ** ərazilərini əhatə edir.</p>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <i class="fas fa-car-side"></i>
+                        <h3>Nəqliyyat və Çatımlılıq</h3>
+                        <p>Bakıdan əsas turistik nöqtələrə gediş yolları keyfiyyətlidir (Göygölə girişdə məhdudiyyətlər istisna olmaqla). Turlarımızda **yüksək keyfiyyətli avtobus və ya SUV** nəqliyyatı təmin edilir.</p>
+                    </div>
+                     <div class="info-card">
+                        <i class="fas fa-hotel"></i>
+                        <h3>Gəziləcək Yerlər</h3>
+                        <p>Göygöl Milli Parkı (icazə ilə), Şəki Xan Sarayı, Nüxə qalası, Qəbələ Tufandağ (yay/qış), Yeddi Göllər (Gecikməyən) əsas mənzərələrimizdir.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <hr>
+
+        <section class="section" id="tours">
+            <div class="container animate-scroll">
+                <h2><i class="fas fa-ticket-alt"></i> Fərqli Tur Paketləri</h2>
+                <p class="lead">Zövqünüzə və büdcənizə uyğun turu seçin. Qeyd olunan qiymətlər 1 nəfər üçündür və tam paketi əhatə edir (Nəqliyyat + Bələdçi + Otel).</p>
+
+                <div class="tour-grid">
+                    
+                    <div class="tour-card">
+                        <h3>1. Standart Tur (2 Gecə / 3 Gün)</h3>
+                        <p class="price">189 AZN</p>
+                        <p style="color: #666;">Qiymət 4-ulduzlu oteldə yerləşmə ilə hesablanıb.</p>
+                        <ul>
+                            <li><i class="fas fa-calendar-alt"></i> Tarix: Oktyabr/Mart (Sərfəli mövsüm)</li>
+                            <li><i class="fas fa-map-pin"></i> Marşrut: Şəki/Qəbələ</li>
+                            <li><i class="fas fa-utensils"></i> Qidalanma: Səhər yeməyi</li>
+                            <li><i class="fas fa-bus"></i> Nəqliyyat: Rahat Avtobus</li>
+                        </ul>
+                        <button class="btn-primary buy-tour-btn" data-tour-name="Standart Tur" data-price="189">Turu Al</button>
+                    </div>
+
+                    <div class="tour-card">
+                        <h3>2. Premium Ekspedisiya (3 Gecə / 4 Gün)</h3>
+                        <p class="price">349 AZN</p>
+                        <p style="color: #666;">Qiymət 5-ulduzlu oteldə və ya kottecdə yerləşmə ilə hesablanıb.</p>
+                         <ul>
+                            <li><i class="fas fa-calendar-alt"></i> Tarix: Aprel/Sentyabr (Yüksək mövsüm)</li>
+                            <li><i class="fas fa-map-pin"></i> Marşrut: Göygöl/Şəki/Qəbələ</li>
+                            <li><i class="fas fa-utensils"></i> Qidalanma: Səhər və Axşam yeməyi</li>
+                            <li><i class="fas fa-car-side"></i> Nəqliyyat: Lüks Minivan/SUV</li>
+                        </ul>
+                        <button class="btn-primary buy-tour-btn" data-tour-name="Premium Ekspedisiya" data-price="349">Turu Al</button>
+                    </div>
+                    
+                    <div class="tour-card">
+                        <h3>3. Fərdi Dağ Turu (2 Gün)</h3>
+                        <p class="price">499 AZN</p>
+                        <p style="color: #666;">Qiymət 1-2 nəfər üçün fərdi bələdçi və 4x4 avtomobili əhatə edir.</p>
+                         <ul>
+                            <li><i class="fas fa-calendar-alt"></i> Tarix: İstənilən vaxt (Sorğu əsasında)</li>
+                            <li><i class="fas fa-map-pin"></i> Marşrut: Göygöl və ya seçilmiş dağ cığırları</li>
+                            <li><i class="fas fa-utensils"></i> Qidalanma: Xüsusi piknik paketi</li>
+                            <li><i class="fas fa-truck-monster"></i> Nəqliyyat: 4x4 Off-road</li>
+                        </ul>
+                        <button class="btn-primary buy-tour-btn" data-tour-name="Fərdi Dağ Turu" data-price="499">Turu Al</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div id="payment-modal-caucasus" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h3 style="color: var(--secondary-color);">Tur Rezervasiyası və Ödənişi</h3>
+                <p>Seçilmiş Tur: <strong id="selected-tour-name-modal"></strong></p>
+                <p>Ümumi Qiymət: <strong id="selected-tour-price-modal" style="font-size: 1.2em;"></strong></p>
+                
+                <form id="payment-form-tour">
+                    <div class="form-group">
+                        <label for="card-number-tour">Kart Nömrəsi</label>
+                        <input type="text" id="card-number-tour" placeholder="XXXX XXXX XXXX XXXX" maxlength="16" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-name-tour">Kartdakı Ad/Soyad</label>
+                        <input type="text" id="card-name-tour" placeholder="ALIYEV ALI" required>
+                    </div>
+                    <div class="flex-group">
+                        <div class="form-group">
+                            <label for="expiry-date-tour">Bitiş Tarixi</label>
+                            <input type="text" id="expiry-date-tour" placeholder="MM/YY" maxlength="5" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv-tour">CVV</label>
+                            <input type="text" id="cvv-tour" placeholder="***" maxlength="3" required>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary" style="margin-top: 15px;">Ödənişi Tamamla</button>
+                </form>
+            </div>
+        </div>
+        
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PeakVentures. Bütün hüquqlar qorunur.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeakVentures - Tufandağ Qış/Yay Turları ⛷️</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Tufandağ Səhifəsinə Xüsusi Stillər */
+        :root {
+            --tufandag-color: #3498db; /* Mavi/Qış üçün əsas rəng */
+        }
+        
+        /* Hero Section - Tufandağ Şəkli */
+        .hero-tufandag {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('images/tufandag-hero.jpg') no-repeat center center/cover;
+            height: 70vh;
+            min-height: 450px;
+        }
+
+        /* Tur Kartları Qridi */
+        .tour-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .tour-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            padding: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            /* Xüsusi Rəng - Tufandağ Mavi */
+            border-top: 5px solid var(--tufandag-color); 
+        }
+
+        .tour-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .tour-card h3 {
+            color: var(--tufandag-color);
+            margin-bottom: 15px;
+        }
+
+        .tour-card .price {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: var(--tufandag-color);
+            margin: 15px 0;
+        }
+        
+        /* Əsas düymə rəngini də dəyişdirə bilərsiniz, amma ümumi dizayna uyğun saxlayıram */
+        .btn-tufandag {
+            background-color: var(--tufandag-color);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .btn-tufandag:hover {
+            background-color: #2980b9; /* Bir az tündləşmiş mavi */
+        }
+        
+        /* Xəritə stilləri */
+        .map-section iframe {
+            width: 100%;
+            height: 450px;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+        }
+        
+        /* Xüsusi Qış/Yay kartı stilləri */
+        .season-card {
+            padding: 30px;
+            background-color: #f4f7f9;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        .season-card i {
+            font-size: 3em;
+            color: #e74c3c; /* Qırmızı/Qış Rəngi */
+            margin-bottom: 15px;
+        }
+        .season-card.summer i {
+            color: #2ecc71; /* Yaşıl/Yay Rəngi */
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">PeakVentures ⛰️</h1>
+            <nav id="nav-menu">
+                <a href="index.html">Ana Səhifə</a>
+                <a href="alpinist.html">Alpinistlər</a>
+                <a href="chat.html">AI Çat</a>
+                <a href="booking.html">Uçuş Bileti</a>
+            </nav>
+            <div class="burger-menu" id="burger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section hero-tufandag">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h2 class="animate-in"><i class="fas fa-skiing"></i> Tufandağ Turizmi</h2>
+                <p class="animate-in delay-1">Qəbələ Tufandağ: Qışda Xizək, Yayda Ekstremal Turlar.</p>
+                <a href="#tours" class="btn-tufandag animate-in delay-2">Tur Paketləri</a>
+            </div>
+        </section>
+
+        <section class="section" id="about">
+            <div class="container animate-scroll">
+                <h2><i class="fas fa-mountain"></i> Tufandağ Xizək Mərkəzi Haqqında</h2>
+                <p class="lead">Tufandağ Xizək Mərkəzi Qəbələdə yerləşir və Azərbaycanda ən müasir qış idmanları kompleksidir. Kompleks ilboyu xidmət göstərir və müxtəlif səviyyəli xizək yolları, kanat yolları və otellərə malikdir.</p>
+                
+                <div class="info-grid" style="margin-top: 40px;">
+                    <div class="season-card winter">
+                        <i class="fas fa-snowflake"></i>
+                        <h3>Qış Mövsümü (Dekabr - Mart)</h3>
+                        <p>Əsas fəaliyyətlər: Xizək, snoubord, kanat yolları. Turlara xizək avadanlıqlarının kirayəsi daxildir.</p>
+                    </div>
+                    <div class="season-card summer">
+                        <i class="fas fa-hiking"></i>
+                        <h3>Yay Mövsümü (Aprel - Noyabr)</h3>
+                        <p>Əsas fəaliyyətlər: Dağ velosipedi, Tufandağ zirvəsinə gəzintilər, paraplan uçuşları və dincəlmə.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <hr>
+
+        <section class="section" id="tours">
+            <div class="container animate-scroll">
+                <h2><i class="fas fa-ticket-alt"></i> Tufandağ Tur Paketləri</h2>
+                <p class="lead">Qış idmanları və ya yay gəzintiləri üçün ideal paketləri seçin.</p>
+
+                <div class="tour-grid">
+                    
+                    <div class="tour-card">
+                        <h3>1. Qış Xizək Paketi (3 Gün)</h3>
+                        <p class="price">299 AZN</p>
+                        <p style="color: #666;">Qiymət 4-ulduzlu oteldə (Qəbələ) yerləşmə ilə hesablanıb.</p>
+                        <ul>
+                            <li><i class="fas fa-calendar-alt"></i> Mövsüm: Qış (Dek-Mar)</li>
+                            <li><i class="fas fa-chair"></i> Kanat Yolu: 2 günlük limitsiz bilet</li>
+                            <li><i class="fas fa-utensils"></i> Qidalanma: Səhər və Axşam</li>
+                            <li><i class="fas fa-skiing"></i> Əlavə: Xizək Avadanlığı kirayəsi (1 gün)</li>
+                        </ul>
+                        <button class="btn-tufandag buy-tour-tufandag" data-tour-name="Qış Xizək Paketi" data-price="299">Turu Al</button>
+                    </div>
+
+                    <div class="tour-card">
+                        <h3>2. Yay Tufandağ Ekspedisiyası (2 Gün)</h3>
+                        <p class="price">199 AZN</p>
+                        <p style="color: #666;">Qiymət 3-ulduzlu qonaq evində yerləşmə ilə hesablanıb.</p>
+                          <ul>
+                            <li><i class="fas fa-calendar-alt"></i> Mövsüm: Yay (Apr-Noy)</li>
+                            <li><i class="fas fa-hiking"></i> Aktivlik: Rəhbərlə zirvə gəzintisi</li>
+                            <li><i class="fas fa-utensils"></i> Qidalanma: Səhər yeməyi</li>
+                            <li><i class="fas fa-car-side"></i> Nəqliyyat: Rahat Avtobus</li>
+                        </ul>
+                        <button class="btn-tufandag buy-tour-tufandag" data-tour-name="Yay Tufandağ Ekspedisiyası" data-price="199">Turu Al</button>
+                    </div>
+                    
+                    <div class="tour-card">
+                        <h3>3. Premium Ailə Turu (4 Gün)</h3>
+                        <p class="price">749 AZN</p>
+                        <p style="color: #666;">Qiymət ailə kottecində yerləşmə ilə hesablanıb (4 nəfərlik).</p>
+                          <ul>
+                            <li><i class="fas fa-users"></i> İştirakçı sayı: Max 4 nəfər</li>
+                            <li><i class="fas fa-map-pin"></i> Marşrut: Tufandağ + Nohur Göl</li>
+                            <li><i class="fas fa-bus"></i> Nəqliyyat: Fərdi Minivan</li>
+                            <li><i class="fas fa-medal"></i> Xüsusi: Ailəvi Əyləncə Mərkəzi biletləri</li>
+                        </ul>
+                        <button class="btn-tufandag buy-tour-tufandag" data-tour-name="Premium Ailə Turu" data-price="749">Turu Al</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <hr>
+
+        <section class="section map-section">
+            <div class="container animate-scroll">
+                <h2><i class="fas fa-map-marked-alt"></i> Tufandağ Xizək Kompleksinin Yeri</h2>
+                <p class="lead">Tufandağ, Qəbələ şəhərinin kənarında, Böyük Qafqaz dağlarının ətəyində yerləşir.</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1525.688390740924!2d47.88600128795039!3d40.9272336681024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x403f83738096f26d%3A0xb363c3f3a8b417e2!2sTufandag%20Mountain%20Resort!5e0!3m2!1sen!2saz!4v1701267431267!5m2!1sen!2saz" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+        
+        <div id="payment-modal-tufandag" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h3 style="color: var(--tufandag-color);">Tur Rezervasiyası və Ödənişi</h3>
+                <p>Seçilmiş Tur: <strong id="selected-tour-name-tufandag"></strong></p>
+                <p>Ümumi Qiymət: <strong id="selected-tour-price-tufandag" style="font-size: 1.2em;"></strong></p>
+                
+                <form id="payment-form-tufandag">
+                    <div class="form-group">
+                        <label for="card-number-tufandag">Kart Nömrəsi</label>
+                        <input type="text" id="card-number-tufandag" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-name-tufandag">Kartdakı Ad/Soyad</label>
+                        <input type="text" id="card-name-tufandag" placeholder="ALIYEV ALI" required>
+                    </div>
+                    <div class="flex-group">
+                        <div class="form-group">
+                            <label for="expiry-date-tufandag">Bitiş Tarixi</label>
+                            <input type="text" id="expiry-date-tufandag" placeholder="MM/YY" maxlength="5" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv-tufandag">CVV</label>
+                            <input type="text" id="cvv-tufandag" placeholder="***" maxlength="3" required>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-tufandag" style="margin-top: 15px;">Ödənişi Tamamla</button>
+                </form>
+            </div>
+        </div>
+        
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PeakVentures. Bütün hüquqlar qorunur.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<section class="section" id="extra-info">
+    <div class="container animate-scroll">
+        <h2><i class="fas fa-bed"></i> Harada Qonaqlamalı və Nə Etməli?</h2>
+        <p class="lead">Tufandağ kompleksinin yaxınlığında yerləşən əsas otellər, gəzinti marşrutları və adrenalin dolu fəaliyyətlər.</p>
+        
+        <div class="info-grid">
+            
+            <div class="info-card delay-1" style="border-bottom-color: #e74c3c;">
+                <i class="fas fa-hotel" style="color: #e74c3c;"></i>
+                <h3>Qonaqlama Seçimləri</h3>
+                <p>Tufandağ kompleksinin özündə yerləşən **Qafqaz Tufandag Hotel** (5 ulduzlu) və ya yaxınlıqda yerləşən **Qafqaz Riverside Resort Hotel** kimi lüks variantları seçə bilərsiniz.</p>
+                <p style="font-size: 0.9em; margin-top: 10px;">*Orta qiymətlər 250 AZN-dən başlayır.</p>
+            </div>
+            
+            <div class="info-card delay-2" style="border-bottom-color: #3498db;">
+                <i class="fas fa-route" style="color: #3498db;"></i>
+                <h3>Kanat Yolu & Marşrutlar</h3>
+                <p>Kompleksdə 4 fərqli kanat xətti var. Xizək yolları müxtəlif mürəkkəblik səviyyələrinə bölünür (göy, qara, qırmızı). Yayda bu yollar gəzinti və velosiped üçün istifadə olunur.</p>
+                <p style="font-size: 0.9em; margin-top: 10px;">*Kanat biletləri: Böyüklər üçün 23 AZN (Bütün xətlər).</p>
+            </div>
+            
+            <div class="info-card delay-3" style="border-bottom-color: #2ecc71;">
+                <i class="fas fa-quidditch" style="color: #2ecc71;"></i>
+                <h3>Adrenalin Fəaliyyətləri</h3>
+                <p>Xizəkdən başqa, burada **Kvadrosikl (ATV) Turları** (40 AZN-dən), **Avtoxizək** (50 AZN-dən) və ya mərkəzin yaxınlığında yerləşən **Nohur gölü** gəzintisi edə bilərsiniz.</p>
+                <p style="font-size: 0.9em; margin-top: 10px;">*Kvadrosikl turu 15-20 dəqiqə davam edir.</p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="https://www.tufandag.com/az/hotels" target="_blank" class="btn-tufandag">Bütün Otellərə Bax <i class="fas fa-external-link-alt"></i></a>
+        </div>
+    </div>
+</section>

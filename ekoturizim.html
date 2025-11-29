@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeakVentures - Ekoloji Turizm 🌿</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Əsas rənglərə əsaslanan xüsusi Eko Turizm stilləri */
+        .hero-ekotourism {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('images/eco-hero.jpg') no-repeat center center/cover;
+            height: 50vh;
+            min-height: 400px;
+        }
+        .ekotourism-intro h2 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        .ekotourism-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+        .eco-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 50, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        .eco-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 50, 0, 0.2);
+        }
+        .eco-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .eco-content {
+            padding: 20px;
+        }
+        .eco-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .eco-content p {
+            font-size: 0.9em;
+            color: #555;
+        }
+        .btn-eco-learn {
+            margin-top: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .btn-eco-learn:hover {
+            background-color: var(--secondary-color);
+        }
+        /* Responsiveness for smaller screens */
+        @media (max-width: 768px) {
+            .ekotourism-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">PeakVentures ⛰️</h1>
+            <nav id="nav-menu">
+                <a href="index.html">Ana Səhifə</a>
+                <a href="ekoturizm.html" class="active">Ekoloji Turizm</a>
+                <a href="alpinist.html">Alpinistlər</a>
+                <a href="chat.html">AI Çat</a>
+                <a href="booking.html">Uçuş Bileti</a>
+            </nav>
+            <div class="burger-menu" id="burger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section hero-ekotourism">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h2 class="animate-in">Təbiəti Qoruyaq, Birlikdə Kəşf Edək!</h2>
+                <p class="animate-in delay-1">Dayanıqlı səyahətlərinizi PeakVentures ilə planlayın.</p>
+            </div>
+        </section>
+
+        <section class="section ekotourism-intro">
+            <div class="container animate-scroll">
+                <h2>💚 Ekoloji Turizm Nədir?</h2>
+                <p>Ekoloji turizm, təbiətin və yerli əhalinin rifahını qorumağa yönəlmiş məsuliyyətli səyahətdir. Bizim ekoloji turlarımız ətraf mühitə minimal təsir göstərərək, təbii ərazilərin fərqli cəhətlərini kəşf etməyə imkan verir.</p>
+                <p>Hədəfimiz: Təbiəti sevmək, onu qorumaq və bu dəyəri gələcək nəsillərə çatdırmaqdır.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 style="text-align: center; color: var(--primary-color);">Əsas Eko-Turizm Marşrutlarımız</h2>
+                <div class="ekotourism-grid animate-scroll">
+                    
+                    <div class="eco-card">
+                        <img src="images/qizilagac.jpg" alt="Qızılağac Milli Parkı">
+                        <div class="eco-content">
+                            <h4>Qızılağac Milli Parkı (Quş Səyahəti)</h4>
+                            <p>Azərbaycanın cənubunda, köçəri quşların əsas dayanacağı. Təbiət fotoqrafiyası və quş müşahidəsi üçün ideal məkandır.</p>
+                            <a href="#" class="btn-eco-learn">Ətraflı Bax</a>
+                        </div>
+                    </div>
+
+                    <div class="eco-card">
+                        <img src="images/shahdag.jpg" alt="Şahdağ Milli Parkı">
+                        <div class="eco-content">
+                            <h4>Şahdağ Eko-Yolları (Böyük Qafqaz)</h4>
+                            <p>Təmiz dağ havası, yerli kəndlərə səfər və dayanıqlı trekking təcrübəsi. Ənənəvi həyat tərzini kəşf edin.</p>
+                            <a href="#" class="btn-eco-learn">Ətraflı Bax</a>
+                        </div>
+                    </div>
+
+                    <div class="eco-card">
+                        <img src="images/goygol.jpg" alt="Göygöl Milli Parkı">
+                        <div class="eco-content">
+                            <h4>Göygöl və Maralgöl Turları (Su Hövzələri)</h4>
+                            <p>Avtomobilsiz zonada gəzinti və təmiz göl ekosisteminin qorunmasına dəstək. Eko-etikaya riayət edin.</p>
+                            <a href="#" class="btn-eco-learn">Ətraflı Bax</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PeakVentures. Bütün hüquqlar qorunur.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

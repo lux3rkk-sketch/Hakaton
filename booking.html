@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uçuş Bileti Axtarışı</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">PeakVentures ⛰️</h1>
+            <nav id="nav-menu">
+                <a href="index.html">Ana Səhifə</a>
+                <a href="alpinist.html">Alpinistlər</a>
+                <a href="chat.html">AI Çat</a>
+                <a href="booking.html" class="active">Uçuş Bileti</a>
+            </nav>
+            <div class="burger-menu" id="burger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section hero-booking">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h2 class="animate-in">Zirvələrə Uçuşunuzu Rezervasiya Edin</h2>
+                <p class="animate-in delay-1">Dünyanın istənilən dağlıq regionuna ən uyğun aviabiletləri tapın.</p>
+            </div>
+        </section>
+
+        <section class="booking-form-section">
+            <div class="container">
+                <div class="booking-form-box animate-scroll">
+                    <h3>Uçuş Axtarışı</h3>
+                    <form id="flight-search-form">
+                        <div class="form-group">
+                            <label for="departure">Gediş Məntəqəsi</label>
+                            <input type="text" id="departure" placeholder="Bakı (GYD)" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="arrival">Çatış Məntəqəsi (Dağlıq Region)</label>
+                            <input type="text" id="arrival" placeholder="Tbilisi (TBS), Kəpəz, və s." required>
+                        </div>
+                        <div class="form-group date-group">
+                            <div>
+                                <label for="depart-date">Gediş Tarixi</label>
+                                <input type="date" id="depart-date" required>
+                            </div>
+                            <div>
+                                <label for="return-date">Qayıdış Tarixi</label>
+                                <input type="date" id="return-date">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="passengers">Sərnişin Sayı</label>
+                            <input type="number" id="passengers" value="1" min="1" required>
+                        </div>
+                        <button type="submit" class="btn-primary"><i class="fas fa-plane"></i> Biletləri Axtar</button>
+                    </form>
+                </div>
+
+                <div class="search-results-placeholder animate-scroll">
+                    <h4>Axtarış Nəticələri</h4>
+                    <div id="flight-results-container">
+                        <p class="initial-message">Zəhmət olmasa yuxarıdakı formanı doldurub axtarışa başlayın.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="reservation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modal-title">Biletin Rezervasiyası</h3>
+            <p>Seçdiyiniz Bilet Qiyməti: <strong id="selected-price"></strong></p>
+            <form id="payment-form">
+                <div class="form-group">
+                    <label for="card-number"><i class="far fa-credit-card"></i> Kart Nömrəsi</label>
+                    <input type="text" id="card-number" placeholder="XXXX XXXX XXXX XXXX" required maxlength="16">
+                </div>
+                <div class="form-group">
+                    <label for="card-name"><i class="fas fa-user"></i> Kart Sahibinin Adı</label>
+                    <input type="text" id="card-name" placeholder="Kartda Olduğu Kimi" required>
+                </div>
+                <div class="form-group date-group">
+                    <div>
+                        <label for="expiry-date">Bitmə Tarixi (AA/YY)</label>
+                        <input type="text" id="expiry-date" placeholder="01/25" required maxlength="5">
+                    </div>
+                    <div>
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" placeholder="123" required maxlength="3">
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary"><i class="fas fa-lock"></i> Ödənişi Təsdiqlə</button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="result-popup" class="modal">
+        <div class="modal-content small-modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="popup-title"></h3>
+            <p id="popup-message"></p>
+            <button class="btn-primary close-popup-btn">Bağla</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PeakVentures. Bütün hüquqlar qorunur.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

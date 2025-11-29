@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeakVentures - 24/7 Dəstək 📞</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Əsas rənglərə əsaslanan xüsusi Dəstək stilləri */
+        .hero-support {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('images/support-hero.jpg') no-repeat center center/cover;
+            height: 50vh;
+            min-height: 400px;
+        }
+
+        .support-channels {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            padding: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .channel-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            text-align: center;
+            flex: 1 1 250px; /* Flexbox-da ölçü */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .channel-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .channel-card i {
+            font-size: 3em;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .channel-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .channel-card a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Əlaqə Formu Stili */
+        .contact-form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+        }
+        .contact-form-container .form-group {
+            margin-bottom: 15px;
+        }
+        .contact-form-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .contact-form-container input[type="text"],
+        .contact-form-container input[type="email"],
+        .contact-form-container textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .contact-form-container textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .contact-form-container button {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .support-channels {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .channel-card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">PeakVentures ⛰️</h1>
+            <nav id="nav-menu">
+                <a href="index.html">Ana Səhifə</a>
+                <a href="ekoturizm.html">Ekoloji Turizm</a>
+                <a href="alpinist.html">Alpinistlər</a>
+                <a href="chat.html">AI Çat</a>
+                <a href="booking.html">Uçuş Bileti</a>
+                <a href="support.html" class="active">24/7 Dəstək</a>
+            </nav>
+            <div class="burger-menu" id="burger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section hero-support">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h2 class="animate-in">24/7 Dəstək Xidməti</h2>
+                <p class="animate-in delay-1">Səyahətinizin hər addımında sizinləyik. İstənilən sualınızı bizə ünvanlayın.</p>
+            </div>
+        </section>
+
+        <section class="section support-intro">
+            <div class="container animate-scroll">
+                <h2 style="text-align: center; color: var(--primary-color);">Dəstək Kanallarımız</h2>
+                <p style="text-align: center; margin-bottom: 40px;">Sizin üçün ən uyğun olan əlaqə vasitəsini seçin:</p>
+                
+                <div class="support-channels">
+                    <div class="channel-card animate-scroll">
+                        <i class="fas fa-phone-alt"></i>
+                        <h4>Telefon Dəstəyi</h4>
+                        <p>Təcili hallarda və ya biletlə bağlı suallarınız üçün.</p>
+                        <p>Zəng edin: <a href="tel:+994501234567">+994 50 123 45 67</a></p>
+                    </div>
+
+                    <div class="channel-card animate-scroll delay-1">
+                        <i class="fas fa-envelope"></i>
+                        <h4>E-poçt Dəstəyi</h4>
+                        <p>Qeyri-təcili suallar, təkliflər və ya geri bildirim üçün.</p>
+                        <p>Yazın: <a href="mailto:support@peakventures.az">support@peakventures.az</a></p>
+                    </div>
+
+                    <div class="channel-card animate-scroll delay-2">
+                        <i class="fab fa-whatsapp"></i>
+                        <h4>WhatsApp / Telegram</h4>
+                        <p>Sürətli və yazılı ünsiyyətə üstünlük verənlər üçün.</p>
+                        <p>Əlaqə: <a href="https://wa.me/994501234567" target="_blank">Bizə yazın</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container contact-form-container animate-scroll">
+                <h3 style="text-align: center; margin-bottom: 25px;">Sualınızı Birbaşa Göndərin</h3>
+                <form id="direct-support-form">
+                    <div class="form-group">
+                        <label for="support-name">Adınız və Soyadınız</label>
+                        <input type="text" id="support-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="support-email">E-poçt Ünvanınız</label>
+                        <input type="email" id="support-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="support-topic">Mövzu</label>
+                        <input type="text" id="support-topic" placeholder="Məs: Bilet dəyişikliyi, Tur məlumatı" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="support-message">Mesajınız</label>
+                        <textarea id="support-message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i> Mesajı Göndər</button>
+                </form>
+                <p id="support-message-status" style="margin-top: 15px; text-align: center; display: none; color: var(--secondary-color);"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PeakVentures. Bütün hüquqlar qorunur.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
