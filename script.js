@@ -1160,7 +1160,7 @@ const alpinistsData = [
             "Everest və Lhotze zirvələrini eyni ekspedisiyada fəth edən ilk azərbaycanlı"
         ],
         year: "1930-cu illər",
-        fullBio: "Şərqiyyə Abbasova Azərbaycan idman tarixində qadınların alpinizmdə iştirakının ilk parlaq nümunəsidir. Onun 1953-cü ildə qazandığı çempionluq qadınların da dağlara çıxması üçün böyük stimul olmuşdur. O, cəsarəti və əzmi ilə tanınıb."
+        fullBio: "Vəfa Musayeva Azərbaycan idman tarixində qadınların alpinizmdə iştirakının ilk parlaq nümunəsidir. Onun 1953-cü ildə qazandığı çempionluq qadınların da dağlara çıxması üçün böyük stimul olmuşdur. O, cəsarəti və əzmi ilə tanınıb."
     }
 ];
 
