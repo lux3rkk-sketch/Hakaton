@@ -70,19 +70,6 @@
             height: 400px;
             border-radius: 10px;
         }
-    </style>
-</head>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="icon" type="image/png" href="/image/mountain.png"> 
-    
-    <title>Dağlara Səyahət - Ana Səhifə</title>
-    
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-       <style>
 
         .hero-caucasus {
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('images/caucasus-hero.jpg') no-repeat center center/cover;
@@ -146,6 +133,45 @@
             height: 400px;
             border-radius: 10px;
         }
+        .success-modal .modal-content {
+    border-top: 5px solid #2ecc71; /* Yaşıl zolaq */
+    text-align: center;
+}
+
+.success-icon {
+    font-size: 4em;
+    color: #2ecc71; /* Yaşıl rəng */
+    margin-bottom: 15px;
+    animation: bounceIn 0.8s ease-out;
+}
+
+/* Animasiya üçün */
+@keyframes bounceIn {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+    40% {
+        transform: scale3d(.9, .9, .9);
+    }
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+    80% {
+        transform: scale3d(.97, .97, .97);
+    }
+    100% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
     </style>
 </head>
 <body>
@@ -276,6 +302,17 @@
                 </form>
             </div>
         </div>
+
+        <div id="success-modal" class="modal success-modal">
+            <div class="modal-content success-content">
+                <span class="close-btn">&times;</span>
+                <i class="fas fa-check-circle success-icon"></i>
+                <h3 style="color: #2ecc71; margin-bottom: 10px;">Ödəniş UĞURLA TAMAMLANDI!</h3>
+                <p>PeakVentures-u seçdiyiniz üçün təşəkkür edirik. Turunuz <strong id="booked-tour-name"></strong> uğurla rezervasiya edildi.</p>
+                <p style="margin-top: 15px;">Rezervasiya detalları e-poçt ünvanınıza göndərildi.</p>
+                <button class="btn-primary" id="success-ok-btn" style="margin-top: 20px;">Bağla</button>
+            </div>
+        </div>
         
     </main>
 
@@ -283,8 +320,8 @@
         <div class="container">
             <p>&copy; 2025 PeakVentures. Bütün hüquqlar qorunur.</p>
             <div class="social-links">
-                <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/"  target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/"  target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </footer>

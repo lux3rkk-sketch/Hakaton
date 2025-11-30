@@ -1171,6 +1171,8 @@ const modalBody = document.getElementById('modal-body');
 const closeBtn = document.querySelector('.close-btn');
 
 
+
+
 // Əgər əsas konteyner tapılmazsa, funksiyanın işləməsinin qarşısını alan yoxlama
 if (!alpinistList) {
     console.error("XƏTA: Kartların əlavə ediləcəyi əsas konteyner (alpinistList) tapılmadı.");
@@ -1504,3 +1506,130 @@ if (paymentFormTufandag) {
         closeTufandagModal();
     });
 }
+// ===============================================
+// KIÇİK QAFQAZ TUR ÖDƏNİŞ MODALI MƏNTİQİ
+// ===============================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Elementləri seçin
+    const modal = document.getElementById('payment-modal-caucasus');
+    const closeBtn = modal ? modal.querySelector('.close-btn') : null;
+    const buyButtons = document.querySelectorAll('.buy-tour-btn');
+    const tourNameModal = document.getElementById('selected-tour-name-modal');
+    const tourPriceModal = document.getElementById('selected-tour-price-modal');
+
+    // Elementlərin mövcudluğunu yoxlayın (bu, xətanın qarşısını alır)
+    if (!modal || !buyButtons.length) {
+        // Bu səhifə tur səhifəsi deyilsə, funksiyanı dayandırın.
+        return; 
+    }
+
+    // 2. Modalı Açma Funksiyası
+    buyButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault(); // Default davranışın qarşısını al
+
+            // Düymədən tur məlumatlarını götür
+            const tourName = button.getAttribute('data-tour-name');
+            const tourPrice = button.getAttribute('data-price');
+            
+            // Məlumatları modala daxil edin
+            if (tourNameModal) tourNameModal.textContent = tourName;
+            if (tourPriceModal) tourPriceModal.textContent = tourPrice + " AZN";
+
+            // Modalı görünən edin
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Arxa fonu dondur
+        });
+    });
+
+    // 3. Modalı Bağlama Funksiyaları
+    
+    // X düyməsinə klikləmə
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+    }
+
+    // Modalın kənarına klikləmə
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+});
+
+// ===============================================
+// KIÇİK QAFQAZ TUR ÖDƏNİŞ MODALI MƏNTİQİ (GENİŞLƏNDİRİLMİŞ)
+// ===============================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Mövcud elementləri seçin
+    const paymentModal = document.getElementById('payment-modal-caucasus');
+    const paymentForm = document.getElementById('payment-form-tour');
+    
+    // 2. Yeni elementləri seçin (Success Modal)
+    const successModal = document.getElementById('success-modal');
+    const successCloseBtn = successModal ? successModal.querySelector('.close-btn') : null;
+    const successOkBtn = document.getElementById('success-ok-btn');
+    const bookedTourNameSpan = document.getElementById('booked-tour-name');
+
+    // ... Qalan modal açma kodları (buyButtons.forEach və s.) yuxarıda olduğu kimi qalır ...
+    
+    // Yalnız elementlər mövcud olduqda işə salın
+    if (paymentForm && paymentModal && successModal) {
+        
+        // Ödəniş forması təqdim edildikdə (submit)
+        paymentForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Səhifənin yenilənməsinin qarşısını al
+
+            // **********************************************
+            // Qeyd: Real layihədə burada serverə AJAX sorğusu göndərilir
+            // və kart məlumatları yoxlanılır.
+            // Biz burada ödənişin uğurlu olduğunu fərz edirik.
+            // **********************************************
+
+            // 1. Seçilmiş tur adını götür (öndə açılmış modaldan)
+            const selectedTourName = document.getElementById('selected-tour-name-modal').textContent;
+
+            // 2. Ödəniş modalını bağla
+            paymentModal.style.display = 'none';
+            
+            // 3. Uğur modalını aç
+            if (bookedTourNameSpan) {
+                 bookedTourNameSpan.textContent = selectedTourName; // Tur adını uğur modalına ötür
+            }
+            successModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            
+            // Təmizləmə (Forma sahələrini təmizləmək tövsiyə olunur)
+            paymentForm.reset();
+        });
+
+        // Uğur modalını bağlama funksiyaları (X və ya Bağla düyməsi)
+        const closeSuccessModal = () => {
+            successModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        };
+
+        if (successCloseBtn) {
+            successCloseBtn.addEventListener('click', closeSuccessModal);
+        }
+        
+        if (successOkBtn) {
+             successOkBtn.addEventListener('click', closeSuccessModal);
+        }
+
+        // Modalın kənarına klikləmə (Success Modal üçün)
+        window.addEventListener('click', (e) => {
+            if (e.target === successModal) {
+                closeSuccessModal();
+            }
+        });
+    }
+
+    // ... buraya əvvəlki buyButtons.forEach dövrü gəlir ...
+});
